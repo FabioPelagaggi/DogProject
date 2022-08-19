@@ -1,15 +1,9 @@
-import Logo from '../Logo'
+import Logo from '../Logo';
 import {
-  HeaderContainer,
-  Navbar,
-  NavMenu,
-  NavItem,
-  NavLink,
-  Button,
-  LogoContainer,
-  MobileIcon,
-  Bar,
- } from './style'
+  Bar, Button, HeaderContainer, LogoContainer,
+  MobileIcon, Navbar, NavItem,
+  NavLink, NavMenu
+} from './style';
 
 interface onToggleProps {
   onToggle: (action: Boolean) => void;
@@ -18,60 +12,57 @@ interface onToggleProps {
 
 export default function Header({ onToggle, isOpen }: onToggleProps) {
   return (
-    <header>
-      <HeaderContainer>
-        <LogoContainer>
-          <Logo />
-        </LogoContainer>
+    <HeaderContainer>
+      <LogoContainer>
+        <Logo />
+      </LogoContainer>
 
-        <Navbar>
-          <NavMenu>
-            <NavItem>
-              <NavLink href="#">
-                Ínicio
-              </NavLink>
-            </NavItem>
+      <Navbar>
+        <NavMenu>
+          <NavItem>
+            <NavLink href="#">
+              Ínicio
+            </NavLink>
+          </NavItem>
 
-            <NavItem>
-              <NavLink>
-                Ajude
-              </NavLink>
-            </NavItem>
+          <NavItem>
+            <NavLink>
+              Ajude
+            </NavLink>
+          </NavItem>
 
-            <NavItem>
-              <NavLink>
-                Sobre
-              </NavLink>
-            </NavItem>
+          <NavItem>
+            <NavLink>
+              Sobre
+            </NavLink>
+          </NavItem>
 
-            <NavItem>
-              <NavLink>
-                Histórias
-              </NavLink>
-            </NavItem>
+          <NavItem>
+            <NavLink>
+              Histórias
+            </NavLink>
+          </NavItem>
 
-            <NavItem>
-              <NavLink>
-                Contato
-              </NavLink>
-            </NavItem>
+          <NavItem>
+            <NavLink>
+              Contato
+            </NavLink>
+          </NavItem>
 
-          </NavMenu>
-        </Navbar>
+        </NavMenu>
+      </Navbar>
 
-        <Button>
-          Faça uma doação
-        </Button>
+      <Button>
+        Faça uma doação
+      </Button>
 
-        <MobileIcon
-          onClick={onToggle}
-        >
-          <Bar isOpen={isOpen} />
-          <Bar isOpen={isOpen} />
-          <Bar isOpen={isOpen} />
-        </MobileIcon>
-
-      </HeaderContainer>
-    </header>
+      <MobileIcon
+        onClick={onToggle}
+      >
+        <Bar isOpen={isOpen} />
+        <Bar isOpen={isOpen} />
+        <Bar isOpen={isOpen} />
+      </MobileIcon>
+    </HeaderContainer>
   )
 }

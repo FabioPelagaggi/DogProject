@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,8 @@ export default function Home() {
         isOpen={isOpen}
         onToggle={handleToggle}
       />
+
+      <Sidebar isOpen={isOpen} />
     </>
   )
 }
