@@ -1,49 +1,71 @@
+import Button from '../Button';
+import Dropdown from '../Dropdown';
 import Logo from '../Logo';
 import {
-  Bar, Button, HeaderContainer, LogoContainer,
+  Bar, ButtonContainer, HeaderContainer, LogoContainer,
+  LogoLink,
   MobileIcon, Navbar, NavItem,
   NavLink, NavMenu
 } from './style';
 
-interface onToggleProps {
-  onToggle: (action: Boolean) => void;
+interface onToggleAndHoverProps {
   isOpen: Boolean;
+  isHover: Boolean;
+  onToggle: (action: Boolean) => void;
+  onOpenDropdown: (action: Boolean) => void;
+  onCloseDropdown: (action: Boolean) => void;
 }
 
-export default function Header({ onToggle, isOpen }: onToggleProps) {
+export default function Header({
+  isOpen,
+  isHover,
+  onToggle,
+  onOpenDropdown,
+  onCloseDropdown
+}: onToggleAndHoverProps) {
+
+
   return (
     <HeaderContainer>
       <LogoContainer>
-        <Logo />
+        <LogoLink href='#'>
+          <Logo />
+        </LogoLink>
       </LogoContainer>
 
       <Navbar>
         <NavMenu>
-          <NavItem>
+          <NavItem onMouseEnter={onCloseDropdown}>
             <NavLink href="#">
               Ínicio
             </NavLink>
           </NavItem>
 
-          <NavItem>
+          <NavItem onMouseEnter={onOpenDropdown}>
             <NavLink>
               Ajude
             </NavLink>
+            {isHover && (
+              <Dropdown
+                onCloseDropdown={onCloseDropdown}
+                onOpenDropdown={onOpenDropdown}
+              />
+            )}
           </NavItem>
 
-          <NavItem>
+          <NavItem onMouseEnter={onCloseDropdown}>
             <NavLink>
               Sobre
             </NavLink>
           </NavItem>
 
-          <NavItem>
+          <NavItem onMouseEnter={onCloseDropdown}>
             <NavLink>
               Histórias
             </NavLink>
           </NavItem>
 
-          <NavItem>
+          <NavItem onMouseEnter={onCloseDropdown}>
             <NavLink>
               Contato
             </NavLink>
@@ -52,9 +74,11 @@ export default function Header({ onToggle, isOpen }: onToggleProps) {
         </NavMenu>
       </Navbar>
 
-      <Button>
-        Faça uma doação
-      </Button>
+      <ButtonContainer>
+        <Button>
+          Faça sua doação
+        </Button>
+      </ButtonContainer>
 
       <MobileIcon
         onClick={onToggle}

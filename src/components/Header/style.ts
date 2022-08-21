@@ -28,6 +28,10 @@ export const LogoContainer = styled.div`
   }
 `;
 
+export const LogoLink = styled.a`
+  cursor: pointer;
+`;
+
 export const Navbar = styled.nav`
   display: flex;
 
@@ -54,6 +58,11 @@ export const NavLink = styled.a`
   padding: 0 18px;
   line-height: 20px;
   color: ${({ theme }) => theme.colors.gray[300]};
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.green[50]};
+  }
 
   &:active {
     font-weight: bold;
@@ -66,23 +75,7 @@ export const NavLink = styled.a`
   }
 `;
 
-export const Button = styled.a`
-  font-size: 14px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.green[200]};
-  cursor: pointer;
-  padding: 10px 24px;
-  border: 1px solid ${({ theme }) => theme.colors.green[200]};
-  border-radius: 40px;
-  text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.green[700]};
-    color: ${({ theme }) => theme.colors.green[50]};
-    border-color: ${({ theme }) => theme.colors.green[700]};
-  }
-
+export const ButtonContainer = styled.div`
   @media (max-width: 768px) {
     display: none;
   }
