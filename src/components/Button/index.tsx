@@ -1,11 +1,11 @@
 import { LinkButton } from "./style";
 
-interface onToggleAndChildrenProps {
+interface Props {
   children: String;
   onToggle?: (action: Boolean) => void;
 }
 
-export default function Button({ children, onToggle }: onToggleAndChildrenProps) {
+export default function Button({ children, onToggle }: Props) {
   return (
     <LinkButton onClick={onToggle}>
       { children }

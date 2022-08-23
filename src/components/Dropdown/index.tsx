@@ -1,15 +1,13 @@
 import { DropdownItem, DropdownMenu } from './style'
 
-interface onCloseDropdownProps {
+interface Props {
   onCloseDropdown: (action: Boolean) => void;
   onOpenDropdown: (action: Boolean) => void;
 }
 
-export default function Dropdown({ onCloseDropdown, onOpenDropdown }: onCloseDropdownProps) {
+export default function Dropdown({ onCloseDropdown, onOpenDropdown }: Props) {
   return (
-    <DropdownMenu
-      onMouseOut={onCloseDropdown}
-    >
+    <DropdownMenu onMouseOut={onCloseDropdown}>
       <DropdownItem
         onMouseEnter={onOpenDropdown}
         onClick={onCloseDropdown}

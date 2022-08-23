@@ -1,10 +1,10 @@
 import { DisclosureItem, DisclosurePanel } from "./style";
 
-interface onToggleProps {
+interface Props {
   onToggle: (action: Boolean) => void;
 }
 
-export default function Disclosure({ onToggle }) {
+export default function Disclosure({ onToggle }: Props) {
   return (
     <DisclosurePanel>
       <DisclosureItem onClick={onToggle}>
