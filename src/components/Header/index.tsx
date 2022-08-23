@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Button from '../Button';
 import Dropdown from '../Dropdown';
 import Logo from '../Logo';
@@ -8,22 +9,21 @@ import {
   NavLink, NavMenu
 } from './style';
 
-interface onToggleAndHoverProps {
+interface Props {
   isOpen: Boolean;
-  isHover: Boolean;
   onToggle: (action: Boolean) => void;
-  onOpenDropdown: (action: Boolean) => void;
-  onCloseDropdown: (action: Boolean) => void;
 }
 
-export default function Header({
-  isOpen,
-  isHover,
-  onToggle,
-  onOpenDropdown,
-  onCloseDropdown
-}: onToggleAndHoverProps) {
+export default function Header({ isOpen, onToggle }: Props) {
+  const [isHover, setIsHover] = useState<Boolean>(false);
 
+  function handleOpenDropdown(): void {
+    setIsHover(true);
+  }
+
+  function handleCloseDropdown(): void {
+    setIsHover(false);
+  }
 
   return (
     <HeaderContainer>
@@ -35,37 +35,37 @@ export default function Header({
 
       <Navbar>
         <NavMenu>
-          <NavItem onMouseEnter={onCloseDropdown}>
+          <NavItem onMouseEnter={handleCloseDropdown}>
             <NavLink href="#">
               Ínicio
             </NavLink>
           </NavItem>
 
-          <NavItem onMouseEnter={onOpenDropdown}>
+          <NavItem onMouseEnter={handleOpenDropdown}>
             <NavLink>
               Ajude
             </NavLink>
             {isHover && (
               <Dropdown
-                onCloseDropdown={onCloseDropdown}
-                onOpenDropdown={onOpenDropdown}
+                onCloseDropdown={handleCloseDropdown}
+                onOpenDropdown={handleOpenDropdown}
               />
             )}
           </NavItem>
 
-          <NavItem onMouseEnter={onCloseDropdown}>
+          <NavItem onMouseEnter={handleCloseDropdown}>
             <NavLink>
               Sobre
             </NavLink>
           </NavItem>
 
-          <NavItem onMouseEnter={onCloseDropdown}>
+          <NavItem onMouseEnter={handleCloseDropdown}>
             <NavLink>
               Histórias
             </NavLink>
           </NavItem>
 
-          <NavItem onMouseEnter={onCloseDropdown}>
+          <NavItem onMouseEnter={handleCloseDropdown}>
             <NavLink>
               Contato
             </NavLink>
