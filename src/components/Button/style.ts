@@ -12,8 +12,8 @@ export const LinkButton = styled.a`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.green[700]};
+    background-color: ${({ theme }) => theme.colors.green[200]};
     color: ${({ theme }) => theme.colors.green[50]};
-    border-color: ${({ theme }) => theme.colors.green[700]};
+    border-color: ${({ theme }) => theme.colors.green[200]};
   }
 `;
