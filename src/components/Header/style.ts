@@ -37,7 +37,7 @@ export const LogoLink = styled.a`
 export const Navbar = styled.nav`
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -78,7 +78,7 @@ export const NavLink = styled.a`
 `;
 
 export const ButtonContainer = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -87,13 +87,13 @@ export const MobileIcon = styled.div`
   display: none;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: block;
   }
 `;
 
 export const Bar = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 25px;
     height: 3px;
     margin: 5px ;

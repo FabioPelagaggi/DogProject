@@ -1,13 +1,30 @@
 import styled from 'styled-components';
 
-export const HeroContainer = styled.section`
+export const HeroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.gray[900]};
   width: 100vw;
-  position: absolute;
-  top: 75px;
+  height: 100%;
+  position: relative;
+`;
+
+export const HeroContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 123px;
+
+  @media (max-width: 1280px) {
+    padding: 0 100px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 30px;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -22,13 +39,12 @@ export const HeroContent = styled.div`
   height: 100%;
   align-items: flex-start;
   justify-content: center;
-  margin-left: 123px;
+  margin-bottom: 84px;
 
   @media (max-width: 768px) {
     align-items: center;
     text-align: center;
     margin: 0;
-    width: 100%;
   }
 `;
 
@@ -38,26 +54,29 @@ export const HeroSpan = styled.span`
   font-weight: bold;
   margin-bottom: 16px;
 
-  @media (max-width: 1280px) {
-    font-size: 14px;
-
+  @media (max-width: 1024px) {
+    margin-bottom: 14px;
   }
 
   @media (max-width: 768px) {
     margin-top: 40px;
   }
-
 `;
 
 export const HeroH1 = styled.h1`
   color: ${({ theme }) => theme.colors.green[50]};
   font-size: 52px;
   font-weight: bold;
-  line-height: 64px;
   margin-bottom: 26px;
+
+  @media (max-width: 1280px) {
+    font-size: 38px;
+    line-height: 44px;
+  }
 
   @media (max-width: 1024px) {
     font-size: 34px;
+    margin-bottom: 16px;
   }
 `;
 
@@ -69,27 +88,90 @@ export const HeroP = styled.p`
 
   @media (max-width: 1024px) {
     font-size: 16px;
+    margin-bottom: 28px;
   }
 `;
 
 export const ImageContainer = styled.div`
   width: 100%;
-  margin-left: 140px;
-  margin-top: calc(118px - 75px);
+  display: flex;
+  justify-content: center;
+  padding: 36px;
 
-  @media (max-width: 1280px) {
-    margin-left: 0;
-    padding: 36px 36px 0 36px;
+  @media (max-width: 1024px) {
+    width: 80%;
+    margin-right: 36px;
   }
 
   @media (max-width: 768px) {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    margin-left: 0;
-    margin-top: 36px;
-    padding: 0 calc(76px - 24px) 0 calc(76px - 24px);
+    margin: 36px 0 0 0 ;
   }
 `;
 
+export const BoxNumbers = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  max-width: calc(100% - 123px * 2);
+  min-height: 210px;
+  background-color: ${({ theme }) => theme.colors.gray[900]};
+  border: 1px solid ${({ theme }) => theme.colors.green[100]};
+  border-radius: 6px;
+  top: 82%;
 
+  @media (max-width: 1280px) {
+    max-width: calc(100% - 100px * 2);
+  }
+
+  @media (max-width: 1024px) {
+    max-width: calc(100% - 30px * 2);
+  }
+
+  @media (max-width: 768px) {
+    max-width: calc(100% - 24px * 2);
+    flex-direction: column;
+  }
+`;
+
+export const BoxContainer = styled.div`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+`;
+
+export const NumBox = styled.span`
+  font-size: 48px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.green[100]};
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+`;
+
+export const TextBox = styled.span`
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.green[200]};
+`;
+
+export const Divider = styled.div`
+  width: 1px;
+  height: 72px;
+  background-color: ${({ theme }) => theme.colors.green[200]};
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;

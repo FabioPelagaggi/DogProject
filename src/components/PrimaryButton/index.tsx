@@ -1,4 +1,3 @@
-import { Icon } from 'phosphor-react';
 import { IconButton, LinkPrimaryButton, TextButton } from './style';
 
 interface Props {
