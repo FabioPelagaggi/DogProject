@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.header`
   width: 100vw;
   height: 75px;
+  background-color: ${({ theme }) => theme.colors.gray[900]};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,6 +11,7 @@ export const HeaderContainer = styled.header`
   top: 0;
   padding: 0 130px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray[500]};
+  z-index: 999;
 
   @media (max-width: 1280px) {
     padding: 0 100px;
@@ -35,7 +37,7 @@ export const LogoLink = styled.a`
 export const Navbar = styled.nav`
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -76,7 +78,7 @@ export const NavLink = styled.a`
 `;
 
 export const ButtonContainer = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -85,13 +87,13 @@ export const MobileIcon = styled.div`
   display: none;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: block;
   }
 `;
 
 export const Bar = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 25px;
     height: 3px;
     margin: 5px ;

@@ -12,7 +12,7 @@ export const SidebarContainer = styled.aside`
   right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +59,7 @@ export const NavSidebarLink = styled.a`
     color: ${({ theme }) => theme.colors.green[50]};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     &:active {
       font-weight: bold;
       color: ${({ theme }) => theme.colors.green[50]};
