@@ -1,93 +1,72 @@
 
 import Dropdown from '../Dropdown';
 import Logo from '../Logo';
-
+import {Instagram} from '@styled-icons/bootstrap/Instagram';
+import {Facebook} from '@styled-icons/feather/Facebook';
+import { Youtube } from '@styled-icons/remix-line/Youtube';
+import {ArrowUp} from '@styled-icons/fa-solid/ArrowUp';
 
 import {
-    ButtonContainer, LinkButton, FooterContainer, LogoContainer,
-    LogoLink,
-    FooterWrapper, SocialMediaWrap, SocialIcons, SocialIconsLinks, NavItem, LogoText, FooterMenu,
-    NavLink, NavMenu
+    FooterSection, FooterWrapper, FooterSocial, FooterIcon,
+    FooterMenu, MenuItem, MenuTitle, MenuButton,
+    FooterLogo, LogoLink, LogoText, ScrollUpButton
   } from './style';
-
-  interface onToggleAndHoverProps {
-    isOpen: Boolean;
-    isHover: Boolean;
-    onToggle: (action: Boolean) => void;
-    onOpenDropdown: (action: Boolean) => void;
-    onCloseDropdown: (action: Boolean) => void;
-  }
   
-export default function Footer(
-    {
-        isOpen,
-        isHover,
-        onToggle,
-        onOpenDropdown,
-        onCloseDropdown
-      }: onToggleAndHoverProps) {
+export default function Footer() {
   
     return (
-      <FooterContainer>
+      <FooterSection>
 
         <FooterWrapper>
-          <LogoContainer>
-            <LogoLink href='#'>
-              <Logo />
+          <FooterLogo>
+            <LogoLink>
+              <Logo />  
             </LogoLink>
             <LogoText>
-              © 2022 SavePet.
+              ©2022 - SavePet.
             </LogoText>
             <LogoText>
               Todos os direitos reservados.
             </LogoText>
-          </LogoContainer>
-        
-  
+          </FooterLogo>
+
           <FooterMenu>
-            <NavMenu>
-              <NavItem onMouseEnter={onCloseDropdown}>
-                <NavLink href="#">
-                  Ínicio
-                </NavLink>
-              </NavItem>
-
-                <NavLink href="#">
-                  Ajude
-                </NavLink>
-              
-                <NavLink href="#">
-                  Sobre
-                </NavLink>
-
-                <NavLink href="#">
-                  Histórias
-                </NavLink>
-
-                <NavLink href="#">
-                  Contato
-                </NavLink>
-
-                <ButtonContainer>
-                  <LinkButton>
-                    Faça sua doação
-                  </LinkButton>
-                </ButtonContainer>
-            </NavMenu>
+            <MenuTitle>
+              Menu
+            </MenuTitle>
+            <MenuItem>
+              Início
+            </MenuItem>
+            <MenuItem>
+              Ajude
+            </MenuItem>
+            <MenuItem>
+              Sobre
+            </MenuItem>
+            <MenuItem>
+              Histórias
+            </MenuItem>
+            <MenuItem>
+              Contato
+            </MenuItem>
+            <MenuButton>
+              Faça uma doação
+            </MenuButton>
           </FooterMenu>
         </FooterWrapper>
 
-        <SocialMediaWrap>
-          <SocialIcons>
-              <SocialIconsLinks>
-                
-              </SocialIconsLinks>
-              <SocialIconsLinks>
-                @styled-icons/boxicons-logos/FacebookCircle
-              </SocialIconsLinks>
-            </SocialIcons>
-        </SocialMediaWrap>
-      </FooterContainer>
+        <FooterSocial>
+          <FooterIcon>
+            <Instagram size='25px'/>
+          </FooterIcon>
+          <FooterIcon>
+            <Facebook size='28px'/>
+          </FooterIcon>
+          <FooterIcon>
+            <Youtube size='30px'/>
+          </FooterIcon>
+        </FooterSocial>
+      </FooterSection>
     )
   }
   

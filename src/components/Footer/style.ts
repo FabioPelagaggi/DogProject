@@ -1,147 +1,105 @@
 import styled from 'styled-components';
 
-export const FooterContainer = styled.footer`
+export const FooterSection = styled.footer`
   width: 100vw;
-  height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  bottom: 10px;
-  padding: 0 130px;
+  bottom: 0;
+  user-select: none;
   border-top: 1px solid ${({ theme }) => theme.colors.gray[500]};
-  
-  @media (max-width: 1280px) {
-    padding: 0 100px;
-  }
-
-  @media (max-width: 1024px) {
-    padding: 0 30px;
-  }
+  background-color: ${({ theme }) => theme.colors.gray[900]};
 `;
 
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.footer`
   width: 100vw;
   display: flex;
-  
+  lign-items: left;
   justify-content: space-between;
-  max-width: 1500px;
-  margin: 0 auto;
+  background-color: ${({ theme }) => theme.colors};
 
   @media (max-width: 768px) {
     flex-direction: column;
+    justify-content: center;
+    width: 80vw;
   }
 `;
-export const LogoContainer = styled.div`
-  width: 300px;
+
+export const FooterLogo = styled.footer`
+  background-color: ${({ theme }) => theme.colors.gray[900]};
+  padding: 25px 100px;
   display: flex;
-  flex-direction: column; 
-
-  @media (max-width: 1024px) {
-    width: 130px;
-  }
+  flex-direction: column;
+  justify-content: center;
+  
 `;
-
 export const LogoLink = styled.a`
+  color: ${({ theme }) => theme.colors.gray[300]};
   cursor: pointer;
 `;
 
 export const LogoText = styled.a`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
   color: ${({ theme }) => theme.colors.gray[300]};
-  transition: 0.2s ease-in-out;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.green[50]};
-  }
+  font-size: 14px;
 `;
 
-export const FooterMenu = styled.nav`
-  display: flex;
-`;
-
-export const NavMenu = styled.ul`
+export const FooterMenu = styled.ul`
+  background-color: ${({ theme }) => theme.colors.gray[900]};
   display: flex;
   flex-direction: column;
+  justify-content: center;
   list-style: none;
+  padding: 25px 100px;
+  
 `;
 
-export const NavItem = styled.li`
-  cursor: pointer;
-  height: 75px;
-`;
-
-export const NavLink = styled.a`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  text-decoration: none;
-  padding: 0 18px;
-  line-height: 20px;
-  color: ${({ theme }) => theme.colors.gray[300]};
-  transition: 0.2s ease-in-out;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.green[50]};
-  }
-
-  &:active {
-    font-weight: bold;
-    color: ${({ theme }) => theme.colors.green[50]};
-    border-bottom: 3px solid ${({ theme }) => theme.colors.green[50]};
-  }
-
-  @media (max-width: 1024px) {
-    padding: 0 12px;
-  }
-`;
-
-export const ButtonContainer = styled.div`
-  @media (max-width: 768px) {
-    
-  }
-`;
-
-export const LinkButton = styled.a`
-  font-size: 14px;
+export const MenuTitle = styled.li`
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.green[200]};
-  cursor: pointer;
-  padding: 10px 24px;
-  
-  border-radius: 40px;
   text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+  font-size: 20px;
+`;
 
+export const MenuItem = styled.li`
+  color: ${({ theme }) => theme.colors.gray[300]};
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
   &:hover {
-    background-color: ${({ theme }) => theme.colors.green[700]};
     color: ${({ theme }) => theme.colors.green[50]};
-    border-color: ${({ theme }) => theme.colors.green[700]};
   }
 `;
 
-export const SocialMediaWrap = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  max-width: 100vw;
-  margin: 40px auto 0 auto;
-  background-color: #522274;
-  border-top: 1px solid ${({ theme }) => theme.colors.gray[500]};
+export const MenuButton = styled.li`
+  color: ${({ theme }) => theme.colors.green[200]};
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: ${({ theme }) => theme.colors.green[50]};
+  }
+`;
 
+export const FooterSocial = styled.footer`
+  width: 100vw;
+  background-color: ${({ theme }) => theme.colors.gray[900]};
+  border-top: 2px solid ${({ theme }) => theme.colors.gray[500]};
+  padding: 8px 100px;
+  text-align: center;
   
 `;
 
-export const SocialIcons = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
+export const FooterIcon = styled.a`
+  padding: 8px 5px;
+  cursor: pointer;
 `;
 
-export const SocialIconsLinks = styled.a`
-  color: #fff;
+export const ScrollUpButton = styled.a`
+  cursor: pointer;
+  padding: 18px 15px;
+  bottom: 15rem;
+  background-color:  ${({ theme }) => theme.colors.red[100]};
+
 `;
