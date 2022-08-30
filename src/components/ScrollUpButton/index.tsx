@@ -1,17 +1,18 @@
-import {ArrowUp} from '@styled-icons/fa-solid/ArrowUp';
-
+import { ArrowUp } from 'phosphor-react';
 import {ScrollUpButton, ScrollUpText} from './style';
+import { animateScroll } from 'react-scroll';
 
 export default function ScrollUpBtn() {
-  
+    function handleToggleHome() {
+        animateScroll.scrollToTop();
+    }
+
     return (
-        <ScrollUpButton>
-            <ScrollUpText>  
+        <ScrollUpButton onClick={handleToggleHome}>
+            <ScrollUpText>
                 ScrollUp
             </ScrollUpText>
-            <i>
-                <ArrowUp />
-            </i>
+            <ArrowUp size={32} />
         </ScrollUpButton>
     )
 }

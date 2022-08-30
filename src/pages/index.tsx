@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Sidebar from "../components/Sidebar";
-import ScrollUpBtn from "../components/ScrollUpButton";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState<Boolean>(false);
@@ -26,7 +25,6 @@ export default function Home() {
       <Hero />
 
       <Footer />
-      <ScrollUpBtn />
     </>
   )
 }

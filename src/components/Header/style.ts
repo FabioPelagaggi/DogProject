@@ -1,4 +1,23 @@
+import { MouseEventHandler } from 'react';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
+
+interface isOpenProps {
+  isOpen: Boolean;
+}
+
+interface LinkProps {
+  to: string;
+  smooth?: boolean;
+  duration?: number;
+  spy?: boolean;
+  exact?: boolean;
+  offset?: number;
+}
+
+interface MobileIconProps {
+  onClick: MouseEventHandler<HTMLDivElement> & ((action: boolean) => void);
+}
 
 export const HeaderContainer = styled.header`
   width: 100vw;
@@ -52,7 +71,7 @@ export const NavItem = styled.li`
   height: 75px;
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(Link)<LinkProps>`
   display: flex;
   align-items: center;
   height: 100%;
@@ -66,7 +85,7 @@ export const NavLink = styled.a`
     color: ${({ theme }) => theme.colors.green[50]};
   }
 
-  &:active {
+  &.active {
     font-weight: bold;
     color: ${({ theme }) => theme.colors.green[50]};
     border-bottom: 3px solid ${({ theme }) => theme.colors.green[50]};
@@ -83,7 +102,7 @@ export const ButtonContainer = styled.div`
   }
 `;
 
-export const MobileIcon = styled.div`
+export const MobileIcon = styled.div<MobileIconProps>`
   display: none;
   cursor: pointer;
 
@@ -92,7 +111,7 @@ export const MobileIcon = styled.div`
   }
 `;
 
-export const Bar = styled.div`
+export const Bar = styled.div<isOpenProps>`
   @media (max-width: 1024px) {
     width: 25px;
     height: 3px;

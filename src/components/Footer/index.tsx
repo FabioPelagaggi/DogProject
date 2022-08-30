@@ -1,26 +1,21 @@
-
-import Dropdown from '../Dropdown';
+import { FacebookLogo, InstagramLogo, YoutubeLogo } from 'phosphor-react';
 import Logo from '../Logo';
-import {Instagram} from '@styled-icons/bootstrap/Instagram';
-import {Facebook} from '@styled-icons/feather/Facebook';
-import { Youtube } from '@styled-icons/remix-line/Youtube';
-import {ArrowUp} from '@styled-icons/fa-solid/ArrowUp';
-
+import ScrollUpBtn from '../ScrollUpButton';
 import {
-    FooterSection, FooterWrapper, FooterSocial, FooterIcon,
-    FooterMenu, MenuItem, MenuTitle, MenuButton,
-    FooterLogo, LogoLink, LogoText, ScrollUpButton
-  } from './style';
-  
+  FooterIcon, FooterLogo, FooterMenu,
+  FooterSection, FooterSocial, FooterWrapper,
+  LogoLink, LogoText, MenuButton,
+  MenuItem, MenuLink, MenuTitle
+} from './style';
 export default function Footer() {
-  
+
     return (
       <FooterSection>
 
         <FooterWrapper>
           <FooterLogo>
             <LogoLink>
-              <Logo />  
+              <Logo />
             </LogoLink>
             <LogoText>
               ©2022 - SavePet.
@@ -35,19 +30,35 @@ export default function Footer() {
               Menu
             </MenuTitle>
             <MenuItem>
-              Início
+              <MenuLink
+                to="hero"
+                smooth
+                spy
+                duration={500}
+                offset={-75}
+              >
+                Início
+              </MenuLink>
             </MenuItem>
             <MenuItem>
-              Ajude
+              <MenuLink>
+                Ajude
+              </MenuLink>
             </MenuItem>
             <MenuItem>
-              Sobre
+              <MenuLink>
+                Sobre
+              </MenuLink>
             </MenuItem>
             <MenuItem>
-              Histórias
+              <MenuLink>
+                Histórias
+              </MenuLink>
             </MenuItem>
             <MenuItem>
-              Contato
+              <MenuLink>
+                Contato
+              </MenuLink>
             </MenuItem>
             <MenuButton>
               Faça uma doação
@@ -57,16 +68,18 @@ export default function Footer() {
 
         <FooterSocial>
           <FooterIcon>
-            <Instagram size='25px'/>
+            <InstagramLogo size={25} />
           </FooterIcon>
           <FooterIcon>
-            <Facebook size='28px'/>
+            <FacebookLogo size={28} />
           </FooterIcon>
           <FooterIcon>
-            <Youtube size='30px'/>
+            <YoutubeLogo size={30} />
           </FooterIcon>
         </FooterSocial>
+
+        <ScrollUpBtn />
+
       </FooterSection>
     )
   }
-  

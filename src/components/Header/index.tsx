@@ -36,13 +36,22 @@ export default function Header({ isOpen, onToggle }: Props) {
       <Navbar>
         <NavMenu>
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink href="#">
+            <NavLink
+              to="hero"
+              smooth
+              duration={500}
+              spy
+              exact={true}
+              offset={-75}
+            >
               Ínicio
             </NavLink>
           </NavItem>
 
           <NavItem onMouseEnter={handleOpenDropdown}>
-            <NavLink>
+            <NavLink
+              // to='#'
+            >
               Ajude
             </NavLink>
             {isHover && (
@@ -54,19 +63,25 @@ export default function Header({ isOpen, onToggle }: Props) {
           </NavItem>
 
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink>
+            <NavLink
+              // to='#'
+            >
               Sobre
             </NavLink>
           </NavItem>
 
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink>
+            <NavLink
+                // to='#'
+              >
               Histórias
             </NavLink>
           </NavItem>
 
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink>
+            <NavLink
+                // to='#'
+              >
               Contato
             </NavLink>
           </NavItem>
@@ -81,7 +96,7 @@ export default function Header({ isOpen, onToggle }: Props) {
       </ButtonContainer>
 
       <MobileIcon
-        onClick={onToggle}
+        onClick={() => onToggle}
       >
         <Bar isOpen={isOpen} />
         <Bar isOpen={isOpen} />
