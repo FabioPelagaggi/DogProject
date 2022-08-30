@@ -1,6 +1,16 @@
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
+interface LinkProps {
+  to: string;
+  smooth?: boolean;
+  duration?: number;
+  spy?: boolean;
+  exact?: boolean;
+  offset?: number;
+}
+
+
 export const FooterSection = styled.footer`
   width: 100vw;
   display: flex;
@@ -98,8 +108,8 @@ export const MenuItem = styled.li`
   }
 `;
 
-export const MenuLink = styled(Link)`
-  
+export const MenuLink = styled(Link)<LinkProps>`
+
 `
 
 export const MenuButton = styled.li`

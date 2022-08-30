@@ -34,6 +34,7 @@ export default function Footer() {
                 to="hero"
                 smooth
                 spy
+                exact
                 duration={500}
                 offset={-75}
               >
@@ -46,7 +47,14 @@ export default function Footer() {
               </MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink>
+              <MenuLink
+                to="aboutUs"
+                smooth
+                duration={500}
+                spy
+                exact
+                offset={-75}
+              >
                 Sobre
               </MenuLink>
             </MenuItem>

@@ -41,7 +41,7 @@ export default function Header({ isOpen, onToggle }: Props) {
               smooth
               duration={500}
               spy
-              exact={true}
+              exact
               offset={-75}
             >
               Ínicio
@@ -64,7 +64,12 @@ export default function Header({ isOpen, onToggle }: Props) {
 
           <NavItem onMouseEnter={handleCloseDropdown}>
             <NavLink
-              // to='#'
+              to="aboutUs"
+              smooth
+              duration={500}
+              spy
+              exact
+              offset={-75}
             >
               Sobre
             </NavLink>
@@ -96,7 +101,7 @@ export default function Header({ isOpen, onToggle }: Props) {
       </ButtonContainer>
 
       <MobileIcon
-        onClick={() => onToggle}
+        onClick={onToggle}
       >
         <Bar isOpen={isOpen} />
         <Bar isOpen={isOpen} />

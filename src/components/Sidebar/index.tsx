@@ -28,8 +28,16 @@ export default function Sidebar({ isOpen, onToggle }: Props) {
 
       <NavSidebar>
         <NavSidebarMenu>
-          <NavSidebarItem onClick={onToggle}>
-            <NavSidebarLink>
+          <NavSidebarItem>
+            <NavSidebarLink
+              onClick={onToggle}
+              to="hero"
+              smooth
+              spy
+              exact
+              duration={500}
+              offset={-75}
+            >
               Ínicio
             </NavSidebarLink>
           </NavSidebarItem>
@@ -45,20 +53,32 @@ export default function Sidebar({ isOpen, onToggle }: Props) {
 
           {disclosureIsOpen && <Disclosure onToggle={onToggle}/>}
 
-          <NavSidebarItem onClick={onToggle}>
-            <NavSidebarLink>
+          <NavSidebarItem>
+            <NavSidebarLink
+              onClick={onToggle}
+              to="aboutUs"
+              smooth
+              spy
+              exact
+              duration={500}
+              offset={-75}
+            >
               Sobre
             </NavSidebarLink>
           </NavSidebarItem>
 
-          <NavSidebarItem onClick={onToggle}>
-            <NavSidebarLink>
+          <NavSidebarItem>
+            <NavSidebarLink
+              onClick={onToggle}
+            >
               Histórias
             </NavSidebarLink>
           </NavSidebarItem>
 
-          <NavSidebarItem onClick={onToggle}>
-            <NavSidebarLink>
+          <NavSidebarItem>
+            <NavSidebarLink
+              onClick={onToggle}
+            >
               Contato
             </NavSidebarLink>
           </NavSidebarItem>
