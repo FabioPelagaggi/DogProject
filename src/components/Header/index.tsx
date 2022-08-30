@@ -36,13 +36,22 @@ export default function Header({ isOpen, onToggle }: Props) {
       <Navbar>
         <NavMenu>
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink href="#">
+            <NavLink
+              to="hero"
+              smooth
+              duration={500}
+              spy
+              exact
+              offset={-75}
+            >
               Ínicio
             </NavLink>
           </NavItem>
 
           <NavItem onMouseEnter={handleOpenDropdown}>
-            <NavLink>
+            <NavLink
+              // to='#'
+            >
               Ajude
             </NavLink>
             {isHover && (
@@ -54,19 +63,30 @@ export default function Header({ isOpen, onToggle }: Props) {
           </NavItem>
 
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink>
+            <NavLink
+              to="aboutUs"
+              smooth
+              duration={500}
+              spy
+              exact
+              offset={-75}
+            >
               Sobre
             </NavLink>
           </NavItem>
 
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink>
+            <NavLink
+                // to='#'
+              >
               Histórias
             </NavLink>
           </NavItem>
 
           <NavItem onMouseEnter={handleCloseDropdown}>
-            <NavLink>
+            <NavLink
+                // to='#'
+              >
               Contato
             </NavLink>
           </NavItem>

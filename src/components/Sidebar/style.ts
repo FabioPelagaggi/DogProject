@@ -1,6 +1,25 @@
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
-export const SidebarContainer = styled.aside`
+interface LinkProps {
+  // onClick: (action: Boolean) => void;
+  to: string;
+  smooth?: boolean;
+  duration?: number;
+  spy?: boolean;
+  exact?: boolean;
+  offset?: number;
+}
+
+interface IsOpenProps {
+  isOpen: Boolean;
+}
+
+interface DisclosureIsOpenProps {
+  disclosureIsOpen: Boolean;
+}
+
+export const SidebarContainer = styled.aside<IsOpenProps>`
   display: none;
   position: fixed;
   z-index: 999;
@@ -44,7 +63,7 @@ export const NavSidebarItem = styled.li`
   align-items: center;
 `;
 
-export const NavSidebarLink = styled.a`
+export const NavSidebarLink = styled(Link)<LinkProps>`
   display: flex;
   font-size: 24px;
   align-items: center;
@@ -68,7 +87,7 @@ export const NavSidebarLink = styled.a`
   }
 `;
 
-export const NavArrow = styled.span`
+export const NavArrow = styled.span<DisclosureIsOpenProps>`
   position: absolute;
   right: 0;
   margin-right: 36px;

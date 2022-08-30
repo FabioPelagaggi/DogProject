@@ -11,7 +11,7 @@ import { Heart } from "phosphor-react";
 
 export default function Hero() {
   return (
-    <HeroSection>
+    <HeroSection id="hero">
       <HeroContainer>
 
         <HeroContent>
@@ -54,7 +54,7 @@ export default function Hero() {
           </BoxContainer>
 
           <Divider />
-          
+
           <BoxContainer>
             <NumBox>
               +10
