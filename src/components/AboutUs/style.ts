@@ -4,7 +4,6 @@ export const AboutUsSection = styled.section`
   width: 100vw;
   height: calc(100vh - 75px);
   background-color: ${({ theme }) => theme.colors.gray[900]};
-  margin-top: 50%;
 
   @media (max-width: 768px) {
     height: 100%;
