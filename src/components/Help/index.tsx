@@ -56,7 +56,6 @@ export default function Help() {
                 </AdoptButton>
             </HelpTypeBoxGray>
         </HelpTypes>
-        
       </HelpSection>
     )
 }

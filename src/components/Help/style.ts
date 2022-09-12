@@ -135,7 +135,7 @@ export const AdoptButton = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.green[700]};
-    color: ${({ theme }) => theme.colors.green[50]};
+    color: ${({ theme }) => theme.colors.blue['lightStrong']};
     border-color: ${({ theme }) => theme.colors.green[700]};
   }
 `;
